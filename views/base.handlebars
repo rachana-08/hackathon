@@ -1,40 +1,78 @@
 <script src="../client-controllers/base-client-controller.js"></script>
 
 <!-- Nav -->
-<nav class="navbar navbar-inverse bg-inverse fixed-top bg-faded">
+<nav class="navbar navbar-default">
+  <a class="navbar-brand" href="#">APP AUTONOMY</a>
+</nav>
+<br>
     <div class="row">
         <div class="col">
+          <p text-align="center">
           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#cart">Cart (<span class="total-count"></span>)</button><button class="clear-cart btn btn-danger">Clear Cart</button></div>
+          </p>
     </div>
 </nav>
 
 
-<!-- Main -->
-<div class="container textfields">
-    <div class="row">
-      <div class="col">
-        <div class="card" style="width: 20rem;">
-            <label>Enter Server Name</label>
-  <div class="card-block">
-    <input type="text" class="card-title" id="getserver" name="servername">
-    <p class="card-text">Price: $0.0</p>
-    <a href="#" data-name="server" data-price="0.0" class="add-to-cart btn btn-primary">Add to cart</a>
+<div class="content container-fluid" style="background-color: #e3e3e3;">
+    
+	<div class="reportingDiv ora_div" style="display:block;">
+    <label>Add Server Details:</label><br><br>
+        <form>
+            <div class="reportTable-container">
+                <table id="reportingTable" style="width:100%;">
+                    <thead>
+                        <th class="th1">Server Name</th>
+                        <th class="th2">CPU</th>
+                        <th class="th3">RAM</th>
+                        <th class="th4">Storage</th>
+                        <th class="th5">Description</th>
+                        <th class="th6"></th>
+                    </thead>
+                    <tr>
+                      <td><input type="text" class="server" id="getserver" name="servername"></td>
+                      <td><input type="text" class="cpu" id="getserver" name="servername"></td>
+                      <td><input type="text" class="ram" id="getserver" name="servername"></td>
+                      <td><input type="text" class="storage" id="getserver" name="servername"></td>
+                      <td><input type="text" class="desc" id="getserver" name="servername"></td>
+                      <td><a href="#" data-name="server" class="add-to-cart btn btn-primary">Add to cart</a></td>
+                    </tr>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </form>
   </div>
-</div>
-      </div>
-      <div class="col">
-        <div class="card" style="width: 20rem;">
-            <label>Enter Database Name</label>
-  <div class="card-block">
-    <input type="text" class="card-title" id="getdb" name="dbname">
-    <p class="card-text">Price: $0.1</p>
-    <a href="#" data-name="db" data-price="0.1" class="add-to-cart btn btn-primary">Add to cart</a>
+  
+  <br><br>
+  <div class="reportingDiv ora_div" style="display:block;">
+    <label>Add Database Details:</label><br><br>
+        <form>
+            <div class="reportTable-container">
+                <table id="reportingTable" style="width:100%;">
+                    <thead>
+                        <th class="th1">Database Name</th>
+                        <th class="th2">PORT</th>
+                        <th class="th3">Hosting Server</th>
+                        <th class="th4">Size</th>
+                        <th class="th5">Description</th>
+                        <th class="th6"></th>
+                    </thead>
+                    <tr>
+                      <td><input type="text" class="db" id="getdb" name="dbname"></td>
+                      <td><input type="text" class="port" id="getserver" name="servername"></td>
+                      <td><input type="text" class="hostServer" id="getserver" name="servername"></td>
+                      <td><input type="text" class="storage" id="getserver" name="servername"></td>
+                      <td><input type="text" class="desc" id="getserver" name="servername"></td>
+                      <td><a href="#" data-name="db" class="add-to-cart btn btn-primary">Add to cart</a></td>
+                    </tr>
+                    <tbody>
+                    </tbody>
+                </table>
+                <br>
+            </div>
+        </form>
   </div>
-</div>
-      </div>
-    </div>
-</div>
-
   
  <!-- Modal -->
 <div class="modal fade" id="cart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -50,7 +88,7 @@
         <table class="show-cart table">
           
         </table>
-        <div>Total price: $<span class="total-cart"></span></div>
+        
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -63,6 +101,14 @@
 <style>
     body {
   padding-top: 20px;
+}
+.card-title{
+  		width: 100% !important;
+      height: 35px;
+}
+p{
+  margin-right: 20px;
+  text-align: right;
 }
 
 .show-cart li {
